@@ -1,8 +1,6 @@
 package com.thevarunshah.communityhacks;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-
+import com.thevarunshah.communityhacks.backend.Database;
 import com.thevarunshah.communityhacks.classes.Request;
 
 import android.app.Activity;
@@ -13,13 +11,16 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class RequestsListScreen extends Activity{
+	
+	ArrayAdapter<Request> requestsAA;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +29,11 @@ public class RequestsListScreen extends Activity{
 		
 		ListView requestsLV = (ListView) findViewById(R.id.requestsList);
 		
-		ArrayList<Request> requests = new ArrayList<Request>();
-		for(int i = 1; i <= 20; i ++){
-			Request r = new Request("request #" + i, "some task", "Snow Plowing", 20, 60, Calendar.getInstance().getTime());
-			requests.add(r);
+		for(int i = 1; i <= 5; i ++){
+			Request r = new Request("request #" + i, "some task", "Snow Plowing", 20, 60, "09/15/15", Database.current);
+			Database.allRequests.add(r);
 		}
-		ArrayAdapter<Request> requestsAA = new ArrayAdapter<Request>(getApplicationContext(), android.R.layout.simple_list_item_1, requests){
+		requestsAA = new ArrayAdapter<Request>(getApplicationContext(), android.R.layout.simple_list_item_1, Database.allRequests){
 
 	        @Override
 	        public View getView(int position, View convertView, ViewGroup parent) {
@@ -45,6 +45,24 @@ public class RequestsListScreen extends Activity{
 	        }
 	    };
 		requestsLV.setAdapter(requestsAA);
+		
+		Button newRequest = (Button) findViewById(R.id.addRequest);
+		newRequest.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				Intent i = new Intent(RequestsListScreen.this, NewRequestScreen.class);
+				startActivity(i);
+			}
+		});
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		
+		requestsAA.notifyDataSetChanged();
 	}
 	
 	@Override

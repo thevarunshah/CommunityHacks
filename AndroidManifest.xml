@@ -28,6 +28,9 @@
         <activity
             android:name=".EditProfileScreen"
             android:label="Edit Profile"/>
+        <activity
+            android:name=".NewRequestScreen"
+            android:label="New Request"/>
     </application>
 
 </manifest>

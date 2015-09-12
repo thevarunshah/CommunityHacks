@@ -1,7 +1,6 @@
 package com.thevarunshah.communityhacks.classes;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Request {
 
@@ -9,20 +8,21 @@ public class Request {
 	String description;
 	String notes;
 	String type;
-	double paid;
+	double pays;
 	int estTime;
-	Date due;
+	String due;
 	Person requester;
 	ArrayList<Person> claimers = new ArrayList<Person>();
 	
-	public Request(String title, String description, String type, double paid, int estTime, Date due){
+	public Request(String title, String description, String type, double pays, int estTime, String due, Person requester){
 		
 		this.title = title;
 		this.description = description;
 		this.type = type;
-		this.paid = paid;
+		this.pays = pays;
 		this.estTime = estTime;
 		this.due = due;
+		this.requester = requester;
 	}
 	
 	public void setNotes(String notes){
