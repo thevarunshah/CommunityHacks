@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class Person {
 
-	String firstName;
-	String lastName;
-	String phone;
-	String email;
-	String address;
-	String preferredContactType;
-	ArrayList<Request> requests = new ArrayList<Request>();
+	public String firstName;
+	public String lastName;
+	public String phone;
+	public String email;
+	public String address;
+	public String preferredContactType;
+	public ArrayList<Request> requests = new ArrayList<Request>();
 	
 	public Person(String firstName, String lastName, String phone, String email, String address, String preferredContactType){
 		
