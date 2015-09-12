@@ -24,7 +24,10 @@
         </activity>
         <activity
             android:name=".RequestsListScreen"
-            android:label="Lists of Requests"/>
+            android:label="List of Requests"/>
+        <activity
+            android:name=".EditProfileScreen"
+            android:label="Edit Profile"/>
     </application>
 
 </manifest>

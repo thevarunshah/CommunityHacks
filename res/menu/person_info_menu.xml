@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.thevarunshah.communityhacks.RequestsListScreen" >
+
+    <item
+        android:id="@+id/person_info_menu"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="Profile"
+        android:icon="@drawable/profile_icon"/>
+
+</menu>
