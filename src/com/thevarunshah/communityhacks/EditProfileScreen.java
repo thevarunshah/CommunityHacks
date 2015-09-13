@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 public class EditProfileScreen extends Activity{
 
@@ -21,6 +22,8 @@ public class EditProfileScreen extends Activity{
 		
 		Person p = Database.current;
 		
+		TextView username = (TextView) findViewById(R.id.username);
+		username.setText(p.username);
 		EditText firstName = (EditText) findViewById(R.id.firstName);
 		firstName.setText(p.firstName);
 		EditText lastName = (EditText) findViewById(R.id.lastName);

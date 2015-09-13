@@ -40,5 +40,16 @@ public class LoginScreen extends Activity {
 				}
 			}
 		});
+		
+		Button register = (Button) findViewById(R.id.register);
+		register.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				Intent i = new Intent(LoginScreen.this, RegisterScreen.class);
+				startActivity(i);
+			}
+		});
 	}
 }

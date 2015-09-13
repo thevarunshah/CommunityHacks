@@ -34,6 +34,9 @@
         <activity
             android:name=".ViewRequestScreen"
             android:label="Request"/>
+        <activity
+            android:name=".RegisterScreen"
+            android:label="Register"/>
     </application>
 
 </manifest>
