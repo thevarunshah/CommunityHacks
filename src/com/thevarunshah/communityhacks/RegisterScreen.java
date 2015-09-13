@@ -1,11 +1,14 @@
 package com.thevarunshah.communityhacks;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import com.thevarunshah.communityhacks.backend.Database;
-import com.thevarunshah.communityhacks.classes.Person;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -16,6 +19,10 @@ public class RegisterScreen extends Activity{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		if (android.os.Build.VERSION.SDK_INT > 9) {
+			StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+			StrictMode.setThreadPolicy(policy);
+		}
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.register);
 		
@@ -50,12 +57,17 @@ public class RegisterScreen extends Activity{
 						preferredContactType = "Phone";
 						break;
 				}
-				
-				Person p = new Person(username, firstName, lastName, phone, email, zip, preferredContactType);
-				Database.users.add(p);
-				Database.current = p;
-				Intent i = new Intent(RegisterScreen.this, RequestsListScreen.class);
-				startActivity(i);
+				String payload = "username="+username+"&name="+firstName+"%20"+lastName+"&password="+password+"&email="+email+"&phone="+phone+"&zip_code="+zip;
+				JSONObject response;
+				try {
+					response = new JSONObject(Database.HttpGet("http://jayravaliya.com:5000/api/v0.1/register", payload));
+					String user_token = response.getJSONObject("success").getString("user_token");
+					Database.user_token = user_token;
+					Intent i = new Intent(RegisterScreen.this, RequestsListScreen.class);
+					startActivity(i);
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
 			}
 		});
 	}
