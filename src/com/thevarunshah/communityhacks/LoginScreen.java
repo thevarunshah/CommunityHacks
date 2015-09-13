@@ -28,7 +28,7 @@ public class LoginScreen extends Activity {
 				String username = ((EditText) findViewById(R.id.username)).getText().toString();
 				String password = ((EditText) findViewById(R.id.password)).getText().toString();
 				
-				if(username.equals("demo") && password.equals("demo")){
+				if(username.contains("demo") && password.equals("demo")){
 					Person p = new Person(username, "Joe", "Smith", "123-456-7890", "me@something.com", "08901", "email");
 					Database.users.add(p);
 					Database.current = p;

@@ -3,7 +3,7 @@ package com.thevarunshah.communityhacks.classes;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Person implements Serializable{
+public class Person implements Serializable, Comparable<Person>{
 
 	private static final long serialVersionUID = 1L;
 	public String username;
@@ -40,5 +40,11 @@ public class Person implements Serializable{
 		}
         
 		return false;
+	}
+
+	@Override
+	public int compareTo(Person p) {
+		
+		return this.username.compareTo(p.username);
 	}
 }
