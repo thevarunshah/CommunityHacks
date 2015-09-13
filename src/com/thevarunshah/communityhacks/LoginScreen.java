@@ -29,7 +29,7 @@ public class LoginScreen extends Activity {
 				String password = ((EditText) findViewById(R.id.password)).getText().toString();
 				
 				if(username.equals("demo") && password.equals("demo")){
-					Person p = new Person("Joe", "Smith", "123-456-7890", "me@something.com", "1 Demo Way, New Brunswick, NJ 08901", "email");
+					Person p = new Person(username, "Joe", "Smith", "123-456-7890", "me@something.com", "08901", "email");
 					Database.users.add(p);
 					Database.current = p;
 					Intent i = new Intent(LoginScreen.this, RequestsListScreen.class);

@@ -29,8 +29,8 @@ public class EditProfileScreen extends Activity{
 		email.setText(p.email);
 		EditText phone = (EditText) findViewById(R.id.phone);
 		phone.setText(p.phone);
-		EditText address = (EditText) findViewById(R.id.address);
-		address.setText(p.address);
+		EditText zip = (EditText) findViewById(R.id.zip);
+		zip.setText(p.zip);
 		
 		if(p.preferredContactType.equals("email")){
 			RadioButton emailPref = (RadioButton) findViewById(R.id.emailPref);
@@ -57,8 +57,8 @@ public class EditProfileScreen extends Activity{
 				p.email = email.getText().toString();
 				EditText phone = (EditText) findViewById(R.id.phone);
 				p.phone = phone.getText().toString();
-				EditText address = (EditText) findViewById(R.id.address);
-				p.address = address.getText().toString();
+				EditText zip = (EditText) findViewById(R.id.zip);
+				p.zip = zip.getText().toString();
 				
 				RadioGroup rg = (RadioGroup) findViewById(R.id.prefContactType);
 				switch(rg.getCheckedRadioButtonId()){

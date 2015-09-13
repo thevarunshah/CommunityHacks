@@ -4,27 +4,49 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/firstNameText"
+            android:id="@+id/postedByText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="First Name: "
+            android:text="Posted by: "
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+        <TextView
+            android:id="@+id/postedBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <EditText
-            android:id="@+id/firstName"
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/descriptionText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName" >
+            android:text="Description: "
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
-            <requestFocus />
-        </EditText>
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </LinearLayout>
 
@@ -33,19 +55,17 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/lastNameText"
+            android:id="@+id/typeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Last Name: "
+            android:text="Type of Request: "
             android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <EditText
-            android:id="@+id/lastName"
+        
+        <TextView
+            android:id="@+id/type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </LinearLayout>
 
@@ -54,19 +74,17 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/emailText"
+            android:id="@+id/paysText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email: "
+            android:text="Pays: "
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <EditText
-            android:id="@+id/email"
+        <TextView
+            android:id="@+id/pays"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textEmailAddress" />
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </LinearLayout>
 
@@ -75,19 +93,17 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/phoneText"
+            android:id="@+id/timeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Phone Number: "
+            android:text="Estimated Time to Complete: "
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <EditText
-            android:id="@+id/phone"
+        <TextView
+            android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="phone" />
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </LinearLayout>
 
@@ -96,58 +112,44 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/zipText"
+            android:id="@+id/dateText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Zip Code: "
+            android:text="Complete by: "
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <EditText
-            android:id="@+id/zip"
+        <TextView
+            android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:inputType="textPostalAddress" />
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/prefContactTypeText"
+            android:id="@+id/additionalInfoText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Preferred Contact Type: "
+            android:text="Additional Information: "
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
-        <RadioGroup
-            android:id="@+id/prefContactType"
+        <TextView
+            android:id="@+id/additionalInfo"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            
-            <RadioButton
-                android:id="@+id/emailPref"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Email" />
-
-            <RadioButton
-                android:id="@+id/phonePref"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Phone" />
-
-        </RadioGroup>
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/save"
+        android:id="@+id/claimRequest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save" />
+        android:text="Offer Help" />
 
 </LinearLayout>

@@ -13,6 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -30,7 +32,7 @@ public class RequestsListScreen extends Activity{
 		ListView requestsLV = (ListView) findViewById(R.id.requestsList);
 		
 		for(int i = 1; i <= 5; i ++){
-			Request r = new Request("request #" + i, "some task", "Snow Plowing", 20, 60, "09/15/15", Database.current);
+			Request r = new Request("request #" + i, "some task", "Shoveling", 20, 60, "09/15/15", Database.current);
 			Database.allRequests.add(r);
 		}
 		requestsAA = new ArrayAdapter<Request>(getApplicationContext(), android.R.layout.simple_list_item_1, Database.allRequests){
@@ -45,6 +47,17 @@ public class RequestsListScreen extends Activity{
 	        }
 	    };
 		requestsLV.setAdapter(requestsAA);
+		requestsLV.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				
+				Request r = requestsAA.getItem(position);
+				Intent i = new Intent(RequestsListScreen.this, ViewRequestScreen.class);
+				i.putExtra("request", r);
+				startActivity(i);
+			}
+		});
 		
 		Button newRequest = (Button) findViewById(R.id.addRequest);
 		newRequest.setOnClickListener(new OnClickListener() {

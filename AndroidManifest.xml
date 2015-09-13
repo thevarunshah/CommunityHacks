@@ -31,6 +31,9 @@
         <activity
             android:name=".NewRequestScreen"
             android:label="New Request"/>
+        <activity
+            android:name=".ViewRequestScreen"
+            android:label="Request"/>
     </application>
 
 </manifest>

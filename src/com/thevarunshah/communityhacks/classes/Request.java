@@ -1,18 +1,20 @@
 package com.thevarunshah.communityhacks.classes;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Request {
+public class Request implements Serializable{
 
-	String title;
-	String description;
-	String notes;
-	String type;
-	double pays;
-	int estTime;
-	String due;
-	Person requester;
-	ArrayList<Person> claimers = new ArrayList<Person>();
+	private static final long serialVersionUID = 1L;
+	public String title;
+	public String description;
+	public String notes;
+	public String type;
+	public double pays;
+	public int estTime;
+	public String due;
+	public Person requester;
+	public ArrayList<Person> claimers = new ArrayList<Person>();
 	
 	public Request(String title, String description, String type, double pays, int estTime, String due, Person requester){
 		
