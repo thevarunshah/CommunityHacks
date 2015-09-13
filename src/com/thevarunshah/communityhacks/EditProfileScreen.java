@@ -4,6 +4,7 @@ import com.thevarunshah.communityhacks.backend.Database;
 import com.thevarunshah.communityhacks.classes.Person;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -74,6 +75,17 @@ public class EditProfileScreen extends Activity{
 				}
 				
 				finish();
+			}
+		});
+		
+		Button selfRequests = (Button) findViewById(R.id.viewSelfRequests);
+		selfRequests.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				Intent i = new Intent(EditProfileScreen.this, SelfRequestsListScreen.class);
+				startActivity(i);
 			}
 		});
 		

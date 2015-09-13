@@ -37,6 +37,12 @@
         <activity
             android:name=".RegisterScreen"
             android:label="Register"/>
+        <activity
+            android:name=".SelfRequestsListScreen"
+            android:label="Requests from You"/>
+        <activity
+            android:name=".ViewClaimsScreen"
+            android:label="Claims for Request"/>
     </application>
 
 </manifest>

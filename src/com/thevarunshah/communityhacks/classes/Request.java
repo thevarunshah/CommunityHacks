@@ -14,6 +14,7 @@ public class Request implements Serializable{
 	public int estTime;
 	public String due;
 	public Person requester;
+	public Person claimer;
 	public ArrayList<Person> claimers = new ArrayList<Person>();
 	
 	public Request(String title, String description, String type, double pays, int estTime, String due, Person requester){
